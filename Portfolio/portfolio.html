@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <head>
 <title>Nina Patrina</title>
+
+<!-- style for inspiration from https://web.archive.org/web/20180711111335/https://patflynn.com/ -->
+
 <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Bellefair&family=Montserrat:ital,wght@0,200;1,200&family=Poller+One&family=Poppins:wght@100&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Bellefair&family=Lato:wght@00&family=Montserrat:ital,wght@0,400;1,200&family=Poller+One&family=Poppins:wght@100&display=swap" rel="stylesheet">
 <style>
@@ -11,11 +14,19 @@
     font-family: 'Lato', sans-serif;
   }
 
+  body {
+    background-color: rgba(108, 122, 137, 1);
+  }
+
   /* Style for the big gray block */
   .big-block {
     background-color: rgba(108, 122, 137, 1);
-    padding: 20px;
-    margin: 0;
+    padding: 0 20px;
+  }
+
+  .header {
+  position: fixed;
+  width: 100%;
   }
 
   /* Style for the smaller inner blocks */
@@ -28,6 +39,7 @@
     background-color: rgba(108, 122, 137, 1);
     display: flex;
     align-items: center;
+    padding: 18px;
   }
 
   .inner-block:nth-child(2){
@@ -85,7 +97,7 @@
   }
 
   .style-text {
-    padding: 100px; /* Add padding on all sides to center content */
+    padding: 150px 100px; /* Add padding on all sides to center content */
     color: #3b4553; 
     font-size: 18px;
     font-weight: 100;
@@ -147,61 +159,80 @@
 
   @media (max-width: 900px) {
     .big-block {
-      padding: 10px; /* Adjust padding for smaller screens */
+      padding: 0 10px;
     }
-    .fancy-text {
-      font-size: 30px;
-    }
-    .menu li a {
-      margin-left: 15px; 
-      font-size: 15px;
-    }
+
     .inner-block {
-      margin: 0 10px 10px 10px; /* Adjust margin for smaller screens */
+      margin: 0 20px 0 20px;
     }
-    
-    #introduction{
-      padding: 40px; 
-      font-size: 13px;
-      font-weight: 100;
-      line-height: 1.5;
+
+    .inner-block:first-child {
+      padding: 9px;
+    }
+
+    .inner-block:nth-child(3) {
+      padding: 13px;
+      font-size: 10px;
+    }
+
+    .fancy-text {
+      font-size: 20px;
+    }
+
+    .menu li a {
+      margin-left: 13px;
+      font-size: 10px;
+    }
+
+    .style-text {
+      padding: 70px 50px; /* Add padding on all sides to center content */
+      font-size: 10px;
+    }
+
+    .projects li {
+      margin-bottom: 5px;
+    }
+
+    .projects li a {
+      font-size: 10px;
     }
 
     h1 {
-      font-size: 50px; /* Decrease font size for smaller screens */
+      font-size: 35px;
       padding-bottom: 5px;
     }
 
     .read-more-button {
-      font-size: 14px; /* Decrease font size for smaller screens */
       border: 1px solid #3b4553; 
       border-radius: 3px; /* Rounded corners */
-      padding: 10px 20px; /* Padding on top and sides */
+      padding: 10px 15px; /* Padding on top and sides */
       margin-top: 20px; /* Add space between text and button */
-      font-size: 12px;
+      font-size: 8px;
     }
-  
+
     footer {
-      padding: 20px 20px; 
-      font-size: 12px;
+      padding: 10px 30px; 
+      font-size: 8px;
     }
   }
 </style>
 </head>
 <body>
   <div class="big-block">
-    <div class="inner-block">
-      <div>
+    <div class="header">
+      <div class="inner-block">
+        <div>
           <p class="fancy-text">Nina Patrina</p>
-      </div>
-      <div class="inner-text menu">
-        <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">SKILLS</a></li>
-          <li><a href="#">PROJECTS</a></li>
-          <li><a href="#">BLOG</a></li>
-          <li><a href="#">CONTACTS</a></li>
-        </ul>
+        </div>
+        <div class="inner-text menu">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">SKILLS</a></li>
+            <li><a href="#">PROJECTS</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">CONTACTS</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="inner-block">
@@ -213,7 +244,7 @@
         <p>My tech journey began with self-study, leading to Ada Developers Academy and an internship at Amazon's Business Data Technologies, where I contributed to Redshift and earned AWS certifications.</p>
         <button class="read-more-button">Read More</button>
       </div>
-      <img src="./2.jpeg" alt="Image" class="inner-image">
+      <img src="./2.jpg" alt="Image" class="inner-image">
     </div>
     <div class="inner-block">
       <p>SELF-TAUGHT, SELF-DRIVEN, AND ALWAYS EVOLVING IN THE DIGITAL REALM. </p>
