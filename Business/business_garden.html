@@ -30,7 +30,6 @@
         z-index: 2;
         font-family: 'Playfair Display', serif;
         font-weight: 900;
-        /* background:  radial-gradient(rgba(96, 108, 56, 1), transparent); */
     }
 
     /* Opening hours bar styles */
@@ -221,6 +220,170 @@
     margin: 20px 0 40px 0;
     }
 
+    @media (max-width: 900px) {
+
+        #opening-hours-bar {
+            font-size: 14px;
+        }
+
+        #opening-hours-bar .close-button {
+            font-size: 15px;
+        }
+
+
+        #logo {
+            top: 20px;
+            left: 30px;
+            font-size: 25px;
+            padding: 10px 10px;
+        }
+
+        .small-text {
+            font-size: 14px;
+            margin-bottom: 10px; 
+        }
+
+        .big-text {
+            font-size: 35px; 
+            margin-bottom: 20px; 
+        }
+
+        .sale-button {
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        .prev, .next {
+            font-size: 18px;
+            padding: 10px 10px;
+        }
+
+        nav {
+            text-align: left;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-weight: normal;
+            font-size:15px;
+        }
+        #best {
+            padding: 80px 0;
+            font-size: 20px;
+            color: black;
+        }
+
+        #garden-club {
+            padding: 25px 100px;
+            font-size: 13px;
+        }
+
+        #subscribe-button {
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        footer {
+        font-size: 12px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        #opening-hours-bar {
+            font-size: 10px;
+            display: none;
+        }
+
+        #opening-hours-bar .close-button {
+            font-size: 10px;
+        }
+
+        #logo {
+            top: 0px;
+            left: 5px;
+            font-size: 15px;
+            padding: 10px 10px;
+        }
+
+        .small-text {
+            font-size: 10px;
+            margin-bottom: 5px; 
+        }
+
+        .big-text {
+            font-size: 15px; 
+            margin-bottom: 10px; 
+        }
+
+        .sale-button {
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 8px;
+        }
+
+        .prev, .next {
+            font-size: 13px;
+            padding: 5px 5px;
+        }
+
+        nav {
+            text-align: left;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-weight: normal;
+            font-size: 12px;
+        }
+        #best {
+            padding: 80px 0;
+            font-size: 20px;
+        }
+
+        #garden-club {
+            padding: 10px 30px;
+            font-size: 13px;
+        }
+
+        #garden-club .form-group label {
+            margin-bottom: 5px;
+        }
+
+        #garden-club .form-group input {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        #subscribe-button {
+            padding: 5px 5px;
+            border-radius: 10px;
+            font-size: 10px;
+        }
+
+        footer {
+            padding: 10px 20px; 
+            font-size: 11px;
+        }
+
+        footer div {
+            margin: 20px auto; 
+        }
+
+        footer p {
+            margin: 10px 0 20px 0;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -233,7 +396,7 @@
         <div class="slideshow">
             <div class="prev" onclick="prevSlide()">&#10094;</div>
             <div class="slide active-slide">
-                <img src="./2.jpeg" alt="Celebrate with Us">
+                <img src="./fall-2.jpeg" alt="Celebrate with Us">
                 <div class="slide-text">
                     <p class="small-text">the scent of pumpkin spice is in the air...</p>
                     <h2 class="big-text">CELEBRATE FALL WITH US</h2>
@@ -241,7 +404,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="./5.jpeg" alt="Sale">
+                <img src="./fall-5.jpeg" alt="Sale">
                 <div class="slide-text">
                     <p class="small-text">time for new plants</p>
                     <h2 class="big-text">INDOOR PLANT & POTTERY SALE</h2>
@@ -249,7 +412,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="./4.jpeg" alt="October Gardening Tips">
+                <img src="./fall-4.jpeg" alt="October Gardening Tips">
                 <div class="slide-text">
                     <p class="small-text">a season of change</p>
                     <h2 class="big-text">OCTOBER GARDENING TIPS</h2>
@@ -257,7 +420,7 @@
                 </div>
             </div>
             <div class="slide">
-                <img src="./1.jpeg" alt="Visit Our Cafe">
+                <img src="./fall-1.jpeg" alt="Visit Our Cafe">
                 <div class="slide-text">
                     <p class="small-text">treat yourself</p>
                     <h2 class="big-text">VISIT OUR CAFE</h2>
