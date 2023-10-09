@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'Raleway', sans-serif;
+        }
+    
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+        }
+    
+        .top-block {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+        }
+
+        .text {
+            padding-right: 100px;
+            text-align: end;
+            font-size: 16px;
+        }
+
+        .image img {
+            width: 30px;
+            height: auto;
+            padding-left: 100px;
+        }
+
+        .gif-section {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            background-color: #0c243b;
+            position: relative; /* Add this to make position relative for absolute positioning */
+        }
+
+        .gif-container {
+            flex: 1; /* Make the gif-container take up the available space */
+        }
+
+        .gif-section img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text-container {
+            color: white;
+            position: absolute; /* Position absolutely within gif-section */
+            top: 50%; /* Vertically center the text */
+            left: 50%; /* Horizontally center the text */
+            transform: translate(-50%, -50%); /* Center using translate */
+            z-index: 2; /* Set z-index to 2 */
+            font-size: 30px;
+        }
+
+        .recent-research {
+            text-align: left;
+            margin: 50px 100px 10px 100px;
+            font-size: 50px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .explore-button {
+            display: inline-block;
+            padding: 15px;
+            background-color: #2b81d3;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px; /* Rounded corners */
+            font-size: 18px;
+            margin-left: auto; /* Push the button to the right */
+        }
+
+        .black-line {
+            background-color: black;
+            height: 4px;
+            margin: 0 100px;
+        }
+
+        .research-blocks {
+            margin: 100px 100px;
+        }
+
+        .research-entry {
+            padding-bottom: 100px;
+        }
+
+        .menu {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .menu p {
+            padding: 15px 0;
+            text-decoration: none;
+        }
+
+        .publucation{
+            display: flex;
+            align-items: center;
+        }
+
+        .publucation p {
+            font-size: 35px;
+            font-weight: bold;
+            color: #442e37;
+        }
+
+        .read-more-button {
+            display: inline-block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: black;
+            border: 3px solid black; /* Border width and color */
+            outline: none; /* Remove default outline */
+            border-radius: 20px; /* Rounded corners */
+            font-size: 18px;
+            font-weight: lighter;
+            margin-left: auto; /* Push the button to the right */
+            white-space: nowrap; 
+        }
+
+        .authors {
+            font-size: 20px;
+            font-weight: lighter;
+            color: #29484d;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 30px 100px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 900px) {
+        header {
+            padding: 10px 0;
+          }
+
+        .text {
+            padding-right: 100px;
+            font-size: 13px;
+        }
+
+        .image img {
+            width: 20px;
+            padding-left: 100px;
+        }
+
+        .text-container {
+            font-size: 20px;
+        }
+
+        .recent-research {
+            margin: 50px 100px 10px 100px;
+            font-size: 28px;
+        }
+
+        .explore-button {
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        .black-line {
+            height: 4px;
+            margin: 0 100px;
+        }
+
+        .research-blocks {
+            margin: 70px 100px;
+        }
+
+        .research-entry {
+            padding-bottom: 60px;
+        }
+
+        .menu {
+            font-size: 14px;
+        }
+
+        .menu p {
+            padding: 8px 0;
+        }
+
+        .publucation p {
+            font-size: 25px;
+        }
+
+        .read-more-button {
+            padding: 10px 15px;
+            border: 2px solid black; 
+            border-radius: 20px; 
+            font-size: 12px;
+        }
+
+        .authors {
+            font-size: 15px;
+        }
+
+        footer {
+            font-size: 12px;
+            padding: 30px 100px;
+        }
+        
+        }
+        
+        @media (max-width: 500px) {
+        header {
+            padding: 5px 0;
+        }
+
+        .text {
+            padding-right: 30px;
+            font-size: 11px;
+        }
+
+        .image img {
+            width: 10px;
+            padding-left: 30px;
+        }
+
+        .text-container {
+            font-size: 10px;
+        }
+
+        .recent-research {
+            margin: 20px 30px 10px 30px;
+            font-size: 20px;
+        }
+
+        .explore-button {
+            padding: 5px;
+            border-radius: 10px;
+            font-size: 10px;
+            text-align: center;
+            line-height: 10px;
+        }
+
+        .black-line {
+            height: 4px;
+            margin: 0 30px;
+        }
+
+        .research-blocks {
+            margin: 50px 30px;
+        }
+
+        .research-entry {
+            padding-bottom: 40px;
+        }
+
+        .menu {
+            font-size: 11px;
+        }
+
+        .menu p {
+            padding: 8px 0;
+        }
+
+        .publucation p {
+            font-size: 18px;
+        }
+
+        .read-more-button {
+            padding: 5px 10px;
+            border: 2px solid black; 
+            border-radius: 10px; 
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        .authors {
+            font-size: 12px;
+        }
+
+        footer {
+            font-size: 9px;
+            padding: 30px 5px;
+        }
+        
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-block">
+            <div class="image">
+                <img src="./icon.png" alt="Image Description">
+            </div>
+            <div class="text">SciQuest University</div>
+        </div>
+    </header>
+    <main>
+        <div class="gif-section">
+            <div class="gif-container">
+                <img src="./back.jpeg" alt="GIF Image">
+            </div>
+            <div class="text-container">
+                <h1>Exploring Cutting-Edge Discoveries</h1>
+            </div>
+        </div>
+        <div class="recent-research">
+                <p>Recent research</p>
+                <a href="#" class="explore-button">Explore all research</a>
+        </div>
+        <div class="black-line"></div>
+        <div class="research-blocks">
+            <!-- Repeat this block for each research entry -->
+            <div class="research-entry">
+                <div class="menu">
+                    <p>Paper | Computer Vision, Human-Computer Interaction | UIST | 2023</p>
+                    <div class="publucation">
+                        <p>Never-ending Learning of User Interfaces</p>
+                        <a href="#" class="read-more-button">Read Paper</a>
+                    </div>
+                    <div class="authors">
+                        <p>Authors: Jason Wu, Rebecca Krosnick, Eldon Schoop, Amanda Swearngin, Jeffrey P. Bigham, Jeffrey Nichols</p>
+                    </div>
+                </div>
+            </div>
+            <div class="research-entry">
+                <div class="menu">
+                    <p>Paper | Science and Annotation, areaHealth | Nature - Scientific Reports | 2023</p>
+                    <div class="publucation">
+                        <p>Slower Respiration Rate is Associated with Higher Self-reported Well-being After Wellness Training</p>
+                        <a href="#" class="read-more-button">Read Paper</a>
+                    </div>
+                    <div class="authors">
+                        <p>Authors: Helen Y. Weng, Vikramjit Mitra, Erdrin Azemi, Sarah Wu, Andrew Chen</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for other research entries -->
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <p>Privacy Policy | Terms of Use | Legal</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2023 Nina. Developed as a requirement for the Adobe Digital Academy application, as assigned by General Assembly.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

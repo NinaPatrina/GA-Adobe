@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MyNursery</title>
-<link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Bellefair&family=Lato:wght@100&family=Montserrat:ital,wght@0,400;1,200&family=Playfair+Display&family=Poller+One&family=Poppins:wght@100&display=swap" rel="stylesheet">
+<!-- inspired by https://www.swansonsnursery.com/ -->
+<link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Arizonia&family=Bellefair&family=Lato:wght@100&family=Montserrat:ital,wght@0,400;1,200&family=Playfair+Display&family=Poller+One&family=Poppins&display=swap" rel="stylesheet">
 <style>
     /* Reset some default styles for consistency */
     body, h1, p, ul, li, div {
@@ -16,7 +17,7 @@
 
     /* General styles */
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Poppins', sans-serif;
         background-color: #0f4c5c;
     }
 
@@ -83,7 +84,6 @@
         font-size: 25px;
         margin-bottom: 30px; 
         font-style: italic;
-        font-family: 'Playfair Display', serif;
     }
 
     .big-text {
@@ -224,6 +224,7 @@
 
         #opening-hours-bar {
             font-size: 14px;
+            padding: 5px 0;
         }
 
         #opening-hours-bar .close-button {
@@ -473,36 +474,36 @@
 </footer>
 <script>
     // JavaScript for handling the slideshow
-    let currentSlide = 0;
+    var slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
-
-    function showSlide(slideIndex) {
-        if (slideIndex < 0) {
-            slideIndex = slides.length - 1;
+    
+    function showSlide(indexToShow) {
+        if (indexToShow < 0) {
+            indexToShow = slides.length - 1;
         }
-        if (slideIndex >= slides.length) {
-            slideIndex = 0;
+        if (indexToShow >= slides.length) {
+            indexToShow = 0;
         }
-
+    
         slides.forEach((slide, index) => {
-            if (index === slideIndex) {
+            if (index === indexToShow) {
                 slide.classList.add('active-slide');
             } else {
                 slide.classList.remove('active-slide');
             }
         });
-
-        currentSlide = slideIndex;
+    
+        slideIndex = indexToShow; // Update the global slideIndex
     }
-
+    
     function nextSlide() {
-        currentSlide++;
-        showSlide(currentSlide);
+        slideIndex = slideIndex - (-1);
+        showSlide(slideIndex);
     }
-
+    
     function prevSlide() {
-        currentSlide--;
-        showSlide(currentSlide);
+        slideIndex--;
+        showSlide(slideIndex);
     }
 
     // JavaScript for handling the opening hours bar
