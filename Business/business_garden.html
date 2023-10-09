@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyNursery</title>
+<link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Bellefair&family=Lato:wght@100&family=Montserrat:ital,wght@0,400;1,200&family=Playfair+Display&family=Poller+One&family=Poppins:wght@100&display=swap" rel="stylesheet">
+<style>
+    /* Reset some default styles for consistency */
+    body, h1, p, ul, li, div {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: #fff;
+    }
+
+    /* General styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #0f4c5c;
+    }
+
+    #logo {
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        font-size: 50px;
+        padding: 10px 10px;
+        border-radius: 10px;
+        z-index: 2;
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        /* background:  radial-gradient(rgba(96, 108, 56, 1), transparent); */
+    }
+
+    /* Opening hours bar styles */
+    #opening-hours-bar {
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        z-index: 2;
+    }
+
+    #opening-hours-bar .close-button {
+        position: absolute;
+        right: 40px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* Slideshow styles */
+    .slideshow {
+        position: relative;
+        width: 100%;
+    }
+
+    .slide {
+        display: none;
+        flex: 0 0 100%;
+    }
+
+    .active-slide {
+        display: block;
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+    /* styling text on top of the sliding  image */
+    .slide-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+        text-align: center;
+    }
+
+    .small-text {
+        font-size: 25px;
+        margin-bottom: 30px; 
+        font-style: italic;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .big-text {
+        font-size: 70px; 
+        margin-bottom: 40px; 
+    }
+
+    .sale-button {
+        display: inline-block;
+        background-color: #fb8b24;
+        color: white;
+        padding: 15px 20px;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    .sale-button:hover {
+        background-color: #e36414; /* Change background color on hover */
+    }
+
+    /* Navigation arrows */
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    /* Horizontal menu styles */
+    nav {
+        background-color: #0f4c5c;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li {
+        margin: 0 20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 22px;
+    }
+    #best {
+        text-align: center;
+        padding: 100px 0;
+        font-size: 35px;
+        color: black;
+        background-color: #fff;
+    }
+
+    #garden-club {
+        background-color: #e36414;
+        padding: 50px 300px;
+        text-align: left;
+        color: white;
+        font-size: 20px;
+    }
+
+    /* Style the form elements */
+    #garden-club form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #garden-club .form-group {
+        width: 100%;
+    }
+
+    #garden-club .form-group label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #garden-club .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    #garden-club h2,
+    #garden-club p {
+        margin-bottom: 20px;
+    }
+
+    #subscribe-button {
+        display: inline-block;
+        background-color: #9dacaf;
+        color: white;
+        padding: 15px 20px;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 16px;
+    }
+
+    footer {
+        background-color: #0f4c5c; 
+        color: #fff;
+        text-align:  center; 
+        padding: 20px 60px; 
+        font-size: 16px;
+    }
+
+    footer div {
+        margin: 30px auto; 
+    }
+
+    footer p {
+    margin: 20px 0 40px 0;
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <div id="logo">MyNursery</div>
+        <div id="opening-hours-bar">
+            Open 9am-6pm daily
+            <span class="close-button" onclick="closeOpeningHoursBar()">X</span>
+        </div>
+        <div class="slideshow">
+            <div class="prev" onclick="prevSlide()">&#10094;</div>
+            <div class="slide active-slide">
+                <img src="./2.jpeg" alt="Celebrate with Us">
+                <div class="slide-text">
+                    <p class="small-text">the scent of pumpkin spice is in the air...</p>
+                    <h2 class="big-text">CELEBRATE FALL WITH US</h2>
+                    <a class="sale-button" href="#">LEARN MORE</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./5.jpeg" alt="Sale">
+                <div class="slide-text">
+                    <p class="small-text">time for new plants</p>
+                    <h2 class="big-text">INDOOR PLANT & POTTERY SALE</h2>
+                    <a class="sale-button" href="#">LEARN MORE</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./4.jpeg" alt="October Gardening Tips">
+                <div class="slide-text">
+                    <p class="small-text">a season of change</p>
+                    <h2 class="big-text">OCTOBER GARDENING TIPS</h2>
+                    <a class="sale-button" href="#">SEE OUR TIPS</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="./1.jpeg" alt="Visit Our Cafe">
+                <div class="slide-text">
+                    <p class="small-text">treat yourself</p>
+                    <h2 class="big-text">VISIT OUR CAFE</h2>
+                    <a class="sale-button" href="#">WHAT'S ON THE MENU</a>
+                </div>
+            </div>
+            <div class="next" onclick="nextSlide()">&#10095;</div>
+        </div>
+        <!-- Horizontal menu below the images -->
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">GIFT CARDS</a></li>
+                <li><a href="#">GARDEN BLOG</a></li>
+                <li><a href="#">GARDENING TIPS</a></li>
+                <li><a href="#">CAFE</a></li>
+                <li><a href="#">ABOUT US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="best">MYNURSERY IS SEATTLE’S FAVORITE GARDEN STORE!</div>
+    <section id="garden-club">
+        <h2>JOIN THE GARDEN CLUB</h2>
+        <p>When you sign up for MyNursery’ Garden Club, you’ll receive members-only perks, such as gardening resources and helpful tips, notification of new arrivals and promotions, invitations to special events, and exclusive discounts. Sign up now and receive $5 off your next purchase!</p>
+        <p>Our promise: we will never sell your personal information or use it to make unsolicited contact!  </p>
+    
+        <form>
+            <div class="form-group">
+                <label>Email Address <small>(required)</small></label>
+                <input required>
+            
+                <label>Name <small>(required)</small></label>
+                <input required>
+            
+                <label>Zip Code <small>(required)</small></label>
+                <input required>
+
+                <label>Phone</label>
+                <input>
+        
+                <button type="submit" id="subscribe-button">SUBSCRIBE</button>
+            </div>
+        </form>
+    </section>
+</body>
+<footer>
+    <div>MYNURSERY NURSERY, SOME STREET, SEATTLE, WA, 98000, UNITED STATES 123-456-7890 GARDEN@MYNURSERY.COM
+    <p>MyNursery Nursery and our café are open 9am-6pm daily. Breakfast and lunch are served 9am-4pm.</p></div>
+    <div>&copy; 2023 Nina Patrina <p>Developed as a requirement for the Adobe Digital Academy application, as assigned by General Assembly</p></div>
+</footer>
+<script>
+    // JavaScript for handling the slideshow
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(slideIndex) {
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        }
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+
+        slides.forEach((slide, index) => {
+            if (index === slideIndex) {
+                slide.classList.add('active-slide');
+            } else {
+                slide.classList.remove('active-slide');
+            }
+        });
+
+        currentSlide = slideIndex;
+    }
+
+    function nextSlide() {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide--;
+        showSlide(currentSlide);
+    }
+
+    // JavaScript for handling the opening hours bar
+    function closeOpeningHoursBar() {
+        const openingHoursBar = document.getElementById('opening-hours-bar');
+        openingHoursBar.style.display = 'none';
+    }
+</script>
+</html>
