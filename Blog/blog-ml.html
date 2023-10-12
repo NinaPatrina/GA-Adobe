@@ -107,6 +107,11 @@
             text-decoration: none;
         }
 
+        .hidden p,a {
+            padding: 15px 0;
+            text-decoration: none;
+        }
+
         .publucation{
             display: flex;
             align-items: center;
@@ -157,7 +162,7 @@
         @media (max-width: 900px) {
         header {
             padding: 10px 0;
-          }
+        }
 
         .text {
             padding-right: 100px;
@@ -203,6 +208,10 @@
 
         .menu p {
             padding: 8px 0;
+        }
+
+        .hidden p,a {
+            font-size: 14px;
         }
 
         .publucation p {
@@ -280,6 +289,9 @@
             padding: 8px 0;
         }
 
+        .hidden p,a {
+            font-size: 11px;
+        }
         .publucation p {
             font-size: 18px;
         }
@@ -314,48 +326,55 @@
             <div class="text">SciQuest University</div>
         </div>
     </header>
-    <main>
-        <div class="gif-section">
-            <div class="gif-container">
-                <img src="./back.jpeg" alt="GIF Image">
+    <!-- This code creates a page with a GIF image, a title, a link to explore all research, and two research entries -->
+    <div class="gif-section">
+        <div class="gif-container">
+            <img src="./back.jpeg" alt="GIF Image">
+        </div>
+        <div class="text-container">
+            <h1>Exploring Cutting-Edge Discoveries</h1>
+        </div>
+    </div>
+    <div class="recent-research">
+            <p>Recent research</p>
+            <a href="#" class="explore-button">Explore all research</a>
+    </div>
+    <div class="black-line"></div>
+    <div class="research-blocks">
+        <!-- Repeat this block for each research entry -->
+        <div class="research-entry">
+            <div class="menu">
+                <p>Paper | Computer Vision, Human-Computer Interaction | UIST | 2023</p>
             </div>
-            <div class="text-container">
-                <h1>Exploring Cutting-Edge Discoveries</h1>
+            <div class="publucation">
+                <p>Never-ending Learning of User Interfaces</p>
+                <button class="read-more-button">Read More</button>
+            </div>
+            <div class="authors">
+                <p>Authors: Jason Wu, Rebecca Krosnick, Eldon Schoop, Amanda Swearngin, Jeffrey P. Bigham, Jeffrey Nichols</p>
+            </div>
+            <div class="hidden moreContent" style="display: none;">
+                <p>Machine learning models have been trained to predict semantic information about user interfaces (UIs) to make apps more accessible, easier to test, and to automate. Currently, most models rely on datasets that are collected and labeled by human crowd-workers, a process that is costly and surprisingly error-prone for certain tasks. For example, it is possible to guess if a UI element is "tappable" from a screenshot (i.e., based on visual signifiers) or from potentially unreliable metadata (e.g., a view hierarchy), but one way to know for certain is to programmatically tap the UI element and observe the effects. We built the Never-ending UI Learner, an app crawler that automatically installs real apps from a mobile app store and crawls them to discover new and challenging training examples to learn from. The Never-ending UI Learner has crawled for more than 5,000 device-hours, performing over half a million actions on 6,000 apps to train three computer vision models for i) tappability prediction, ii) draggability prediction, and iii) screen similarity.</p>
+                <a href="#" class="view-publication">View publication</a>
             </div>
         </div>
-        <div class="recent-research">
-                <p>Recent research</p>
-                <a href="#" class="explore-button">Explore all research</a>
+        <div class="research-entry">
+            <div class="menu">
+                <p>Paper | Fairness, Speech and Natural Language Processing | 2023</p>
+            </div>
+            <div class="publucation">
+                <p>Gender Bias in LLMs</p>
+                <button class="read-more-button">Read Paper</button>
+            </div>
+            <div class="authors">
+                <p>Authors: Hadas Kotek, Rikker Dockum, David Q. Sun</p>
+            </div>
+            <div class="hidden moreContent" style="display: none;">
+                <p>Large Language Models (LLMs) have made substantial progress in the past several months, shattering state-of-the-art benchmarks in many domains. This paper investigates LLMs' behavior with respect to gender stereotypes, a known stumbling block for prior models. We propose a simple paradigm to test the presence of gender bias, building on but differing from WinoBias, a commonly used gender bias dataset which is likely to be included in the training data of current LLMs. We test four recently published LLMs and demonstrate that they express biased assumptions about men and women, specifically those aligned with people's perceptions, rather than those grounded in fact. We additionally study the explanations provided by the models for their choices. In addition to explanations that are explicitly grounded in stereotypes, we find that a significant proportion of explanations are factually inaccurate and likely obscure the true reason behind the models' choices. This highlights a key property of these models: LLMs are trained on unbalanced datasets; as such, even with reinforcement learning with human feedback, they tend to reflect those imbalances back at us. As with other types of societal biases, we suggest that LLMs must be carefully tested to ensure that they treat minoritized individuals and communities equitably.</p>
+                <a href="#" class="view-publication">View publication</a>
+            </div>
         </div>
-        <div class="black-line"></div>
-        <div class="research-blocks">
-            <!-- Repeat this block for each research entry -->
-            <div class="research-entry">
-                <div class="menu">
-                    <p>Paper | Computer Vision, Human-Computer Interaction | UIST | 2023</p>
-                    <div class="publucation">
-                        <p>Never-ending Learning of User Interfaces</p>
-                        <a href="#" class="read-more-button">Read Paper</a>
-                    </div>
-                    <div class="authors">
-                        <p>Authors: Jason Wu, Rebecca Krosnick, Eldon Schoop, Amanda Swearngin, Jeffrey P. Bigham, Jeffrey Nichols</p>
-                    </div>
-                </div>
-            </div>
-            <div class="research-entry">
-                <div class="menu">
-                    <p>Paper | Science and Annotation, areaHealth | Nature - Scientific Reports | 2023</p>
-                    <div class="publucation">
-                        <p>Slower Respiration Rate is Associated with Higher Self-reported Well-being After Wellness Training</p>
-                        <a href="#" class="read-more-button">Read Paper</a>
-                    </div>
-                    <div class="authors">
-                        <p>Authors: Helen Y. Weng, Vikramjit Mitra, Erdrin Azemi, Sarah Wu, Andrew Chen</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat for other research entries -->
-    </main>
+    </div>
     <footer>
         <div class="footer-content">
             <div class="footer-links">
@@ -366,5 +385,21 @@
             </div>
         </div>
     </footer>
+    <script>
+        const readMoreButtons = document.querySelectorAll(".read-more-button");
+
+        readMoreButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                const moreContent = this.closest('.research-entry').querySelector(".moreContent");
+                if (moreContent.style.display === "none") {
+                    moreContent.style.display = "block";
+                    this.innerHTML = "Read Less";
+                } else {
+                    moreContent.style.display = "none";
+                    this.innerHTML = "Read More";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
